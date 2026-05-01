@@ -15,7 +15,7 @@
     "lint:all": "eslint \"{src,apps,libs}/**/*.ts\" --max-warnings 0",
     "lint:fix": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepare": "husky"
+    "prepare": "cd .. && husky backend/.husky"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
