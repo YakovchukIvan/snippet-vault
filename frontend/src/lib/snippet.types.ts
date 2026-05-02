@@ -26,6 +26,7 @@ export interface SnippetsQuery {
   limit?: number;
   q?: string;
   tag?: string;
+  type?: string;
 }
 
 export interface CreateSnippetPayload {

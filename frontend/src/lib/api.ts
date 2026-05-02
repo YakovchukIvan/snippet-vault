@@ -27,6 +27,7 @@ export const snippetsApi = {
     if (query?.limit) params.set('limit', String(query.limit));
     if (query?.q) params.set('q', query.q);
     if (query?.tag) params.set('tag', query.tag);
+    if (query?.type) params.set('type', query.type);
     const qs = params.toString();
     return request<PaginatedSnippets>(`/snippets${qs ? `?${qs}` : ''}`);
   },
