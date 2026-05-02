@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import { getAppConfig } from './config/app.config';
+import { getCorsConfig } from './config/cors.config';
 import { setupSwagger } from './config/swagger.config';
 
 async function bootstrap(): Promise<void> {
@@ -10,6 +11,8 @@ async function bootstrap(): Promise<void> {
 
   const configService = app.get(ConfigService);
   const { port } = getAppConfig(configService);
+
+  app.enableCors(getCorsConfig(configService));
 
   app.useGlobalPipes(
     new ValidationPipe({

@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getDatabaseConfig } from './config/database.config';
+import { SnippetsModule } from './modules/snippets/snippets.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { getDatabaseConfig } from './config/database.config';
       inject: [ConfigService],
       useFactory: getDatabaseConfig,
     }),
+    SnippetsModule,
   ],
 })
 export class AppModule {}
